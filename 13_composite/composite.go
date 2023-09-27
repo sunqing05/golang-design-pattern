@@ -62,6 +62,10 @@ func NewLeaf() *Leaf {
 	return &Leaf{}
 }
 
+func (l *Leaf) AddChild(c Component) {
+	fmt.Printf("%s is a leaf node, can't add child.\n", l.name)
+}
+
 func (c *Leaf) Print(pre string) {
 	fmt.Printf("%s-%s\n", pre, c.Name())
 }

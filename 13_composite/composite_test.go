@@ -1,6 +1,8 @@
 package composite
 
-func ExampleComposite() {
+import "testing"
+
+func TestComposite(t *testing.T) {
 	root := NewComponent(CompositeNode, "root")
 	c1 := NewComponent(CompositeNode, "c1")
 	c2 := NewComponent(CompositeNode, "c2")
@@ -10,12 +12,15 @@ func ExampleComposite() {
 	l2 := NewComponent(LeafNode, "l2")
 	l3 := NewComponent(LeafNode, "l3")
 
+	l4 := NewComponent(LeafNode, "l4")
+
 	root.AddChild(c1)
 	root.AddChild(c2)
 	c1.AddChild(c3)
 	c1.AddChild(l1)
 	c2.AddChild(l2)
 	c2.AddChild(l3)
+	l3.AddChild(l4)
 
 	root.Print("")
 	// Output:
