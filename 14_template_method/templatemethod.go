@@ -67,3 +67,8 @@ func NewFTPDownloader() Downloader {
 func (d *FTPDownloader) download() {
 	fmt.Printf("download %s via ftp\n", d.uri)
 }
+
+// 子类实现了方法则执行子类的实现，否则执行父类的默认实现
+func (d *FTPDownloader) save() {
+	fmt.Printf("ftp save\n")
+}
